@@ -789,85 +789,85 @@ with tab2:
             selected_ids = selected["id"].astype(int).tolist() if not selected.empty else []
         else:
             selected_ids = []
-# After AgGrid grid_response
-selected = grid.get("selected_rows", [])
-selected_ids = [int(r["id"]) for r in selected] if selected else []
+        # After AgGrid grid_response
+        selected = grid.get("selected_rows", [])
+        selected_ids = [int(r["id"]) for r in selected] if selected else []
 
-if selected_ids:
-    st.subheader(f"🔧 Bulk Actions ({len(selected_ids)} selected)")
-    c1, c2, c3, c4 = st.columns(4)
+        if selected_ids:
+            st.subheader(f"🔧 Bulk Actions ({len(selected_ids)} selected)")
+            c1, c2, c3, c4 = st.columns(4)
 
-    with c1:
-        if st.button("📊 Analyze Selected"):
-            sdf = pd.DataFrame(selected)  # from grid_response
-            sm = calculate_portfolio_metrics(sdf)
-            st.write("**Selected Metrics:**")
-            st.write(f"Total P&L: {format_currency(sm['total_pnl'])}")
-            st.write(f"Total VaR: {format_currency(sm['total_var'])}")
-            st.write(f"Win Rate: {sm['win_rate']:.1f}%")
+            with c1:
+                if st.button("📊 Analyze Selected"):
+                    sdf = pd.DataFrame(selected)  # from grid_response
+                    sm = calculate_portfolio_metrics(sdf)
+                    st.write("**Selected Metrics:**")
+                    st.write(f"Total P&L: {format_currency(sm['total_pnl'])}")
+                    st.write(f"Total VaR: {format_currency(sm['total_var'])}")
+                    st.write(f"Win Rate: {sm['win_rate']:.1f}%")
 
-    with c2:
-        if st.button("❌ Close Selected"):
-            close_positions_by_ids(selected_ids)
-            st.success(f"Closed {len(selected_ids)} positions.")
-            st.rerun()
-
-    with c3:
-        if st.button("🗑️ Delete Selected"):
-            delete_positions_by_ids(selected_ids)
-            st.success(f"Deleted {len(selected_ids)} positions.")
-            st.rerun()
-
-    with c4:
-        if len(selected_ids) == 1:  # only allow editing one at a time
-            pos_id = int(selected_ids[0])
-            pos_row = st.session_state.positions[
-                st.session_state.positions["id"] == pos_id
-            ].iloc[0]
-
-            with st.form("edit_position"):
-                st.write(f"✏️ Editing Position ID: {pos_id}")
-
-                col1e, col2e = st.columns(2)
-                with col1e:
-                    position_size = st.number_input(
-                        "Position Size", value=float(pos_row["Position Size"])
-                    )
-                    entry_price = st.number_input(
-                        "Entry Price", value=float(pos_row["Entry Price"])
-                    )
-                    stop_loss = st.number_input(
-                        "Stop Loss", value=float(pos_row["Stop Loss"]) if pos_row["Stop Loss"] else 0.0
-                    )
-                with col2e:
-                    target_price = st.number_input(
-                        "Target Price", value=float(pos_row["Target Price"]) if pos_row["Target Price"] else 0.0
-                    )
-                    trade_status = st.selectbox(
-                        "Trade Status", ["Open", "Closed"],
-                        index=0 if pos_row["Trade Status"] == "Open" else 1
-                    )
-                    direction = st.selectbox(
-                        "Direction", ["Long", "Short"],
-                        index=0 if pos_row["Direction"] == "Long" else 1
-                    )
-
-                notes = st.text_area("Notes", value=str(pos_row["Notes"] or ""))
-
-                submitted = st.form_submit_button("💾 Save Changes")
-                if submitted:
-                    update_position_by_id(
-                        pos_id,
-                        position_size,
-                        entry_price,
-                        stop_loss if stop_loss > 0 else None,
-                        target_price if target_price > 0 else None,
-                        trade_status,
-                        direction,
-                        notes
-                    )
-                    st.success("✅ Position updated successfully!")
+            with c2:
+                if st.button("❌ Close Selected"):
+                    close_positions_by_ids(selected_ids)
+                    st.success(f"Closed {len(selected_ids)} positions.")
                     st.rerun()
+
+            with c3:
+                if st.button("🗑️ Delete Selected"):
+                    delete_positions_by_ids(selected_ids)
+                    st.success(f"Deleted {len(selected_ids)} positions.")
+                    st.rerun()
+
+            with c4:
+                if len(selected_ids) == 1:  # only allow editing one at a time
+                    pos_id = int(selected_ids[0])
+                    pos_row = st.session_state.positions[
+                        st.session_state.positions["id"] == pos_id
+                    ].iloc[0]
+
+                    with st.form("edit_position"):
+                        st.write(f"✏️ Editing Position ID: {pos_id}")
+
+                        col1e, col2e = st.columns(2)
+                        with col1e:
+                            position_size = st.number_input(
+                                "Position Size", value=float(pos_row["Position Size"])
+                            )
+                            entry_price = st.number_input(
+                                "Entry Price", value=float(pos_row["Entry Price"])
+                            )
+                            stop_loss = st.number_input(
+                                "Stop Loss", value=float(pos_row["Stop Loss"]) if pos_row["Stop Loss"] else 0.0
+                            )
+                        with col2e:
+                            target_price = st.number_input(
+                                "Target Price", value=float(pos_row["Target Price"]) if pos_row["Target Price"] else 0.0
+                            )
+                            trade_status = st.selectbox(
+                                "Trade Status", ["Open", "Closed"],
+                                index=0 if pos_row["Trade Status"] == "Open" else 1
+                            )
+                            direction = st.selectbox(
+                                "Direction", ["Long", "Short"],
+                                index=0 if pos_row["Direction"] == "Long" else 1
+                            )
+
+                        notes = st.text_area("Notes", value=str(pos_row["Notes"] or ""))
+
+                        submitted = st.form_submit_button("💾 Save Changes")
+                        if submitted:
+                            update_position_by_id(
+                                pos_id,
+                                position_size,
+                                entry_price,
+                                stop_loss if stop_loss > 0 else None,
+                                target_price if target_price > 0 else None,
+                                trade_status,
+                                direction,
+                                notes
+                            )
+                            st.success("✅ Position updated successfully!")
+                            st.rerun()
 
 
 
