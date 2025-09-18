@@ -789,7 +789,9 @@ with tab2:
             selected_ids = selected["id"].astype(int).tolist() if not selected.empty else []
         else:
             selected_ids = []
-
+# After AgGrid grid_response
+selected = grid.get("selected_rows", [])
+selected_ids = [int(r["id"]) for r in selected] if selected else []
 
 if selected_ids:
     st.subheader(f"🔧 Bulk Actions ({len(selected_ids)} selected)")
