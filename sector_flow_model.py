@@ -364,10 +364,10 @@ def classify_session_regimes(
         df = df.tz_convert(tz)
 
     sessions = {
-        "Asia":   ("04:00", "05:00"),
-        "London": ("09:00", "10:00"),
-        "NY AM":  ("12:00", "13:00"),
-        "NY PM":  ("13:00", "14:00"),
+        "Asia":   ("00:00", "05:00"),
+        "London": ("07:00", "12:00"),
+        "NY AM":  ("08:30", "12:00"),
+        "NY PM":  ("13:00", "16:00"),
     }
 
     df["ATR"] = atr(df, atr_len)
