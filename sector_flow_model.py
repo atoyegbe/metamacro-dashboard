@@ -248,42 +248,64 @@ def classify_regime(df: pd.DataFrame, atr_len: int = ATR_PERIOD) -> pd.DataFrame
 
 
 def classify_weekly_regime(df: pd.DataFrame, atr_len: int = 14) -> pd.DataFrame:
-    """Weekly regime using 5-day OR."""
+    """Weekly regime anchored to calendar weeks (Monday start)."""
     if df is None or df.empty:
         return pd.DataFrame(columns=["WeeklyMacro","WeeklyMicro","WeeklyTransition","Close","Hi","Lo","Mid"])
-    hi = df["High"].rolling(5).max()
-    lo = df["Low"].rolling(5).min()
+
+    # Resample to weekly anchored bars (Mon–Fri)
+    weekly = df.resample("W-MON", label="left", closed="left").agg({
+        "High": "max",
+        "Low": "min",
+        "Close": "last"
+    }).dropna()
+
+    hi = weekly["High"]
+    lo = weekly["Low"]
     mid = (hi + lo) / 2
-    atr_val = atr(df, atr_len)
+    atr_val = atr(df, atr_len).resample("W-MON").last()
+
     out = []
-    for i in range(len(df)):
+    for i in range(len(weekly)):
         if pd.isna(hi.iloc[i]) or pd.isna(lo.iloc[i]):
             out.append((np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan))
             continue
-        close = df["Close"].iloc[i]
+        close = weekly["Close"].iloc[i]
         macro = _classify_macro(close, hi.iloc[i], lo.iloc[i], mid.iloc[i])
-        micro = _classify_micro(df.iloc[:i+1], macro=macro)
-        trans = _classify_transition(close, hi.iloc[i], lo.iloc[i], mid.iloc[i], atr_val.iloc[i])
+        # Use daily data up to that week for micro trend
+        micro = _classify_micro(df.loc[:weekly.index[i]], macro=macro)
+        trans = _classify_transition(close, hi.iloc[i], lo.iloc[i], mid.iloc[i], atr_val.iloc[i] if i < len(atr_val) else 0)
         out.append((macro, micro, trans, close, hi.iloc[i], lo.iloc[i], mid.iloc[i]))
-    return pd.DataFrame(out, columns=["WeeklyMacro","WeeklyMicro","WeeklyTransition","Close","Hi","Lo","Mid"], index=df.index)
+
+    return pd.DataFrame(out, columns=["WeeklyMacro","WeeklyMicro","WeeklyTransition","Close","Hi","Lo","Mid"], index=weekly.index)
 
 
 def classify_daily_regime(df: pd.DataFrame, atr_len: int = 14) -> pd.DataFrame:
-    """Daily regime using 1-day OR."""
+    """Daily regime anchored to calendar days."""
     if df is None or df.empty:
         return pd.DataFrame(columns=["DailyMacro","DailyMicro","DailyTransition","Close","Hi","Lo","Mid"])
-    hi = df["High"].rolling(1).max()
-    lo = df["Low"].rolling(1).min()
+
+    # Resample to daily bars (just in case interval < 1d)
+    daily = df.resample("1D").agg({
+        "High": "max",
+        "Low": "min",
+        "Close": "last"
+    }).dropna()
+
+    hi = daily["High"]
+    lo = daily["Low"]
     mid = (hi + lo) / 2
-    atr_val = atr(df, atr_len)
+    atr_val = atr(df, atr_len).resample("1D").last()
+
     out = []
-    for i in range(len(df)):
-        close = df["Close"].iloc[i]
+    for i in range(len(daily)):
+        close = daily["Close"].iloc[i]
         macro = _classify_macro(close, hi.iloc[i], lo.iloc[i], mid.iloc[i])
-        micro = _classify_micro(df.iloc[:i+1], macro=macro)
-        trans = _classify_transition(close, hi.iloc[i], lo.iloc[i], mid.iloc[i], atr_val.iloc[i])
+        # Use intraday data up to that day for micro trend
+        micro = _classify_micro(df.loc[:daily.index[i]], macro=macro)
+        trans = _classify_transition(close, hi.iloc[i], lo.iloc[i], mid.iloc[i], atr_val.iloc[i] if i < len(atr_val) else 0)
         out.append((macro, micro, trans, close, hi.iloc[i], lo.iloc[i], mid.iloc[i]))
-    return pd.DataFrame(out, columns=["DailyMacro","DailyMicro","DailyTransition","Close","Hi","Lo","Mid"], index=df.index)
+
+    return pd.DataFrame(out, columns=["DailyMacro","DailyMicro","DailyTransition","Close","Hi","Lo","Mid"], index=daily.index)
 
 
 def compute_latest_labels(
