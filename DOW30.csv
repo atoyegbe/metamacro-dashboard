@@ -1,0 +1,31 @@
+Ticker,Sector,SubIndustry,SectorIndex
+SHW,Basic Materials,Specialty Chemicals,XLB
+VZ,Communication Services,Telecom Services,XLC
+DIS,Communication Services,Entertainment,XLC
+AMZN,Consumer Cyclical,Internet Retail,XLY
+HD,Consumer Cyclical,Home Improvement Retail,XLY
+MCD,Consumer Cyclical,Restaurants,XLY
+NKE,Consumer Cyclical,Footwear & Accessories,XLY
+PG,Consumer Defensive,Household & Personal Products,XLP
+WMT,Consumer Defensive,Discount Stores,XLP
+KO,Consumer Defensive,Beverages - Non-Alcoholic,XLP
+CVX,Energy,Oil & Gas Integrated,XLE
+JPM,Financial,Banks - Diversified,XLF
+AXP,Financial,Credit Services,XLF
+GS,Financial,Capital Markets,XLF
+V,Financial,Credit Services,XLF
+TRV,Financial,Insurance - Property & Casualty,XLF
+UNH,Healthcare,Healthcare Plans,XLV
+MRK,Healthcare,Drug Manufacturers - General,XLV
+AMGN,Healthcare,Drug Manufacturers - General,XLV
+JNJ,Healthcare,Drug Manufacturers - General,XLV
+HON,Industrials,Conglomerates,XLI
+MMM,Industrials,Conglomerates,XLI
+BA,Industrials,Aerospace & Defense,XLI
+CAT,Industrials,Farm & Heavy Construction Machinery,XLI
+CRM,Technology,Software - Application,XLK
+CSCO,Technology,Communication Equipment,XLK
+AAPL,Technology,Consumer Electronics,XLK
+IBM,Technology,Information Technology Services,XLK
+MSFT,Technology,Software - Infrastructure,XLK
+NVDA,Technology,Semiconductors,XLK

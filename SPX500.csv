@@ -1,0 +1,504 @@
+Ticker,Sector,SubIndustry,SectorIndex
+CF,Basic Materials,Agricultural Inputs,XLB
+CTVA,Basic Materials,Agricultural Inputs,XLB
+MOS,Basic Materials,Agricultural Inputs,XLB
+MLM,Basic Materials,Building Materials,XLB
+VMC,Basic Materials,Building Materials,XLB
+DOW,Basic Materials,Chemicals,XLB
+FCX,Basic Materials,Copper,XLB
+NEM,Basic Materials,Gold,XLB
+ALB,Basic Materials,Specialty Chemicals,XLB
+APD,Basic Materials,Specialty Chemicals,XLB
+DD,Basic Materials,Specialty Chemicals,XLB
+ECL,Basic Materials,Specialty Chemicals,XLB
+EMN,Basic Materials,Specialty Chemicals,XLB
+IFF,Basic Materials,Specialty Chemicals,XLB
+LIN,Basic Materials,Specialty Chemicals,XLB
+LYB,Basic Materials,Specialty Chemicals,XLB
+PPG,Basic Materials,Specialty Chemicals,XLB
+SHW,Basic Materials,Specialty Chemicals,XLB
+NUE,Basic Materials,Steel,XLB
+STLD,Basic Materials,Steel,XLB
+IPG,Communication Services,Advertising Agencies,XLC
+OMC,Communication Services,Advertising Agencies,XLC
+TTD,Communication Services,Advertising Agencies,XLC
+EA,Communication Services,Electronic Gaming & Multimedia,XLC
+TTWO,Communication Services,Electronic Gaming & Multimedia,XLC
+DIS,Communication Services,Entertainment,XLC
+FOX,Communication Services,Entertainment,XLC
+FOXA,Communication Services,Entertainment,XLC
+LYV,Communication Services,Entertainment,XLC
+NFLX,Communication Services,Entertainment,XLC
+NWS,Communication Services,Entertainment,XLC
+NWSA,Communication Services,Entertainment,XLC
+PSKY,Communication Services,Entertainment,XLC
+TKO,Communication Services,Entertainment,XLC
+WBD,Communication Services,Entertainment,XLC
+GOOG,Communication Services,Internet Content & Information,XLC
+GOOGL,Communication Services,Internet Content & Information,XLC
+META,Communication Services,Internet Content & Information,XLC
+MTCH,Communication Services,Internet Content & Information,XLC
+CHTR,Communication Services,Telecom Services,XLC
+CMCSA,Communication Services,Telecom Services,XLC
+T,Communication Services,Telecom Services,XLC
+TMUS,Communication Services,Telecom Services,XLC
+VZ,Communication Services,Telecom Services,XLC
+RL,Consumer Cyclical,Apparel Manufacturing,XLY
+LULU,Consumer Cyclical,Apparel Retail,XLY
+ROST,Consumer Cyclical,Apparel Retail,XLY
+TJX,Consumer Cyclical,Apparel Retail,XLY
+KMX,Consumer Cyclical,Auto & Truck Dealerships,XLY
+F,Consumer Cyclical,Auto Manufacturers,XLY
+GM,Consumer Cyclical,Auto Manufacturers,XLY
+TSLA,Consumer Cyclical,Auto Manufacturers,XLY
+APTV,Consumer Cyclical,Auto Parts,XLY
+AZO,Consumer Cyclical,Auto Parts,XLY
+GPC,Consumer Cyclical,Auto Parts,XLY
+LKQ,Consumer Cyclical,Auto Parts,XLY
+ORLY,Consumer Cyclical,Auto Parts,XLY
+DECK,Consumer Cyclical,Footwear & Accessories,XLY
+NKE,Consumer Cyclical,Footwear & Accessories,XLY
+MHK,Consumer Cyclical,"Furnishings, Fixtures & Appliances",XLY
+HD,Consumer Cyclical,Home Improvement Retail,XLY
+LOW,Consumer Cyclical,Home Improvement Retail,XLY
+AMZN,Consumer Cyclical,Internet Retail,XLY
+DASH,Consumer Cyclical,Internet Retail,XLY
+EBAY,Consumer Cyclical,Internet Retail,XLY
+HAS,Consumer Cyclical,Leisure,XLY
+HLT,Consumer Cyclical,Lodging,XLY
+MAR,Consumer Cyclical,Lodging,XLY
+TPR,Consumer Cyclical,Luxury Goods,XLY
+AMCR,Consumer Cyclical,Packaging & Containers,XLY
+AVY,Consumer Cyclical,Packaging & Containers,XLY
+BALL,Consumer Cyclical,Packaging & Containers,XLY
+IP,Consumer Cyclical,Packaging & Containers,XLY
+PKG,Consumer Cyclical,Packaging & Containers,XLY
+SW,Consumer Cyclical,Packaging & Containers,XLY
+ROL,Consumer Cyclical,Personal Services,XLY
+DHI,Consumer Cyclical,Residential Construction,XLY
+LEN,Consumer Cyclical,Residential Construction,XLY
+NVR,Consumer Cyclical,Residential Construction,XLY
+PHM,Consumer Cyclical,Residential Construction,XLY
+CZR,Consumer Cyclical,Resorts & Casinos,XLY
+LVS,Consumer Cyclical,Resorts & Casinos,XLY
+MGM,Consumer Cyclical,Resorts & Casinos,XLY
+WYNN,Consumer Cyclical,Resorts & Casinos,XLY
+CMG,Consumer Cyclical,Restaurants,XLY
+DPZ,Consumer Cyclical,Restaurants,XLY
+DRI,Consumer Cyclical,Restaurants,XLY
+MCD,Consumer Cyclical,Restaurants,XLY
+SBUX,Consumer Cyclical,Restaurants,XLY
+YUM,Consumer Cyclical,Restaurants,XLY
+BBY,Consumer Cyclical,Specialty Retail,XLY
+TSCO,Consumer Cyclical,Specialty Retail,XLY
+ULTA,Consumer Cyclical,Specialty Retail,XLY
+WSM,Consumer Cyclical,Specialty Retail,XLY
+ABNB,Consumer Cyclical,Travel Services,XLY
+BKNG,Consumer Cyclical,Travel Services,XLY
+CCL,Consumer Cyclical,Travel Services,XLY
+EXPE,Consumer Cyclical,Travel Services,XLY
+NCLH,Consumer Cyclical,Travel Services,XLY
+RCL,Consumer Cyclical,Travel Services,XLY
+STZ,Consumer Defensive,Beverages - Brewers,XLP
+TAP,Consumer Defensive,Beverages - Brewers,XLP
+KDP,Consumer Defensive,Beverages - Non-Alcoholic,XLP
+KO,Consumer Defensive,Beverages - Non-Alcoholic,XLP
+MNST,Consumer Defensive,Beverages - Non-Alcoholic,XLP
+PEP,Consumer Defensive,Beverages - Non-Alcoholic,XLP
+BF-B,Consumer Defensive,Beverages - Wineries & Distilleries,XLP
+HSY,Consumer Defensive,Confectioners,XLP
+MDLZ,Consumer Defensive,Confectioners,XLP
+COST,Consumer Defensive,Discount Stores,XLP
+DG,Consumer Defensive,Discount Stores,XLP
+DLTR,Consumer Defensive,Discount Stores,XLP
+TGT,Consumer Defensive,Discount Stores,XLP
+WMT,Consumer Defensive,Discount Stores,XLP
+ADM,Consumer Defensive,Farm Products,XLP
+BG,Consumer Defensive,Farm Products,XLP
+TSN,Consumer Defensive,Farm Products,XLP
+SYY,Consumer Defensive,Food Distribution,XLP
+KR,Consumer Defensive,Grocery Stores,XLP
+CHD,Consumer Defensive,Household & Personal Products,XLP
+CL,Consumer Defensive,Household & Personal Products,XLP
+CLX,Consumer Defensive,Household & Personal Products,XLP
+EL,Consumer Defensive,Household & Personal Products,XLP
+KMB,Consumer Defensive,Household & Personal Products,XLP
+KVUE,Consumer Defensive,Household & Personal Products,XLP
+PG,Consumer Defensive,Household & Personal Products,XLP
+CAG,Consumer Defensive,Packaged Foods,XLP
+CPB,Consumer Defensive,Packaged Foods,XLP
+GIS,Consumer Defensive,Packaged Foods,XLP
+HRL,Consumer Defensive,Packaged Foods,XLP
+K,Consumer Defensive,Packaged Foods,XLP
+KHC,Consumer Defensive,Packaged Foods,XLP
+LW,Consumer Defensive,Packaged Foods,XLP
+MKC,Consumer Defensive,Packaged Foods,XLP
+SJM,Consumer Defensive,Packaged Foods,XLP
+MO,Consumer Defensive,Tobacco,XLP
+PM,Consumer Defensive,Tobacco,XLP
+APA,Energy,Oil & Gas E&P,XLE
+COP,Energy,Oil & Gas E&P,XLE
+CTRA,Energy,Oil & Gas E&P,XLE
+DVN,Energy,Oil & Gas E&P,XLE
+EOG,Energy,Oil & Gas E&P,XLE
+EQT,Energy,Oil & Gas E&P,XLE
+EXE,Energy,Oil & Gas E&P,XLE
+FANG,Energy,Oil & Gas E&P,XLE
+OXY,Energy,Oil & Gas E&P,XLE
+TPL,Energy,Oil & Gas E&P,XLE
+BKR,Energy,Oil & Gas Equipment & Services,XLE
+HAL,Energy,Oil & Gas Equipment & Services,XLE
+SLB,Energy,Oil & Gas Equipment & Services,XLE
+CVX,Energy,Oil & Gas Integrated,XLE
+XOM,Energy,Oil & Gas Integrated,XLE
+KMI,Energy,Oil & Gas Midstream,XLE
+OKE,Energy,Oil & Gas Midstream,XLE
+TRGP,Energy,Oil & Gas Midstream,XLE
+WMB,Energy,Oil & Gas Midstream,XLE
+MPC,Energy,Oil & Gas Refining & Marketing,XLE
+PSX,Energy,Oil & Gas Refining & Marketing,XLE
+VLO,Energy,Oil & Gas Refining & Marketing,XLE
+AMP,Financial,Asset Management,UNKNOWN
+APO,Financial,Asset Management,UNKNOWN
+BEN,Financial,Asset Management,UNKNOWN
+BLK,Financial,Asset Management,UNKNOWN
+BX,Financial,Asset Management,UNKNOWN
+IVZ,Financial,Asset Management,UNKNOWN
+KKR,Financial,Asset Management,UNKNOWN
+NTRS,Financial,Asset Management,UNKNOWN
+PFG,Financial,Asset Management,UNKNOWN
+RJF,Financial,Asset Management,UNKNOWN
+STT,Financial,Asset Management,UNKNOWN
+TROW,Financial,Asset Management,UNKNOWN
+BAC,Financial,Banks - Diversified,UNKNOWN
+BK,Financial,Banks - Diversified,UNKNOWN
+C,Financial,Banks - Diversified,UNKNOWN
+JPM,Financial,Banks - Diversified,UNKNOWN
+WFC,Financial,Banks - Diversified,UNKNOWN
+CFG,Financial,Banks - Regional,UNKNOWN
+FITB,Financial,Banks - Regional,UNKNOWN
+HBAN,Financial,Banks - Regional,UNKNOWN
+KEY,Financial,Banks - Regional,UNKNOWN
+MTB,Financial,Banks - Regional,UNKNOWN
+PNC,Financial,Banks - Regional,UNKNOWN
+RF,Financial,Banks - Regional,UNKNOWN
+TFC,Financial,Banks - Regional,UNKNOWN
+USB,Financial,Banks - Regional,UNKNOWN
+GS,Financial,Capital Markets,UNKNOWN
+MKTX,Financial,Capital Markets,UNKNOWN
+MS,Financial,Capital Markets,UNKNOWN
+SCHW,Financial,Capital Markets,UNKNOWN
+AXP,Financial,Credit Services,UNKNOWN
+COF,Financial,Credit Services,UNKNOWN
+MA,Financial,Credit Services,UNKNOWN
+PYPL,Financial,Credit Services,UNKNOWN
+SYF,Financial,Credit Services,UNKNOWN
+V,Financial,Credit Services,UNKNOWN
+CBOE,Financial,Financial Data & Stock Exchanges,UNKNOWN
+CME,Financial,Financial Data & Stock Exchanges,UNKNOWN
+COIN,Financial,Financial Data & Stock Exchanges,UNKNOWN
+FDS,Financial,Financial Data & Stock Exchanges,UNKNOWN
+ICE,Financial,Financial Data & Stock Exchanges,UNKNOWN
+MCO,Financial,Financial Data & Stock Exchanges,UNKNOWN
+MSCI,Financial,Financial Data & Stock Exchanges,UNKNOWN
+NDAQ,Financial,Financial Data & Stock Exchanges,UNKNOWN
+SPGI,Financial,Financial Data & Stock Exchanges,UNKNOWN
+ACGL,Financial,Insurance - Diversified,UNKNOWN
+AIG,Financial,Insurance - Diversified,UNKNOWN
+BRK-B,Financial,Insurance - Diversified,UNKNOWN
+AFL,Financial,Insurance - Life,UNKNOWN
+GL,Financial,Insurance - Life,UNKNOWN
+MET,Financial,Insurance - Life,UNKNOWN
+PRU,Financial,Insurance - Life,UNKNOWN
+AIZ,Financial,Insurance - Property & Casualty,UNKNOWN
+ALL,Financial,Insurance - Property & Casualty,UNKNOWN
+CB,Financial,Insurance - Property & Casualty,UNKNOWN
+CINF,Financial,Insurance - Property & Casualty,UNKNOWN
+HIG,Financial,Insurance - Property & Casualty,UNKNOWN
+L,Financial,Insurance - Property & Casualty,UNKNOWN
+PGR,Financial,Insurance - Property & Casualty,UNKNOWN
+TRV,Financial,Insurance - Property & Casualty,UNKNOWN
+WRB,Financial,Insurance - Property & Casualty,UNKNOWN
+EG,Financial,Insurance - Reinsurance,UNKNOWN
+AJG,Financial,Insurance Brokers,UNKNOWN
+AON,Financial,Insurance Brokers,UNKNOWN
+BRO,Financial,Insurance Brokers,UNKNOWN
+ERIE,Financial,Insurance Brokers,UNKNOWN
+MMC,Financial,Insurance Brokers,UNKNOWN
+WTW,Financial,Insurance Brokers,UNKNOWN
+INCY,Healthcare,Biotechnology,XLV
+MRNA,Healthcare,Biotechnology,XLV
+REGN,Healthcare,Biotechnology,XLV
+TECH,Healthcare,Biotechnology,XLV
+VRTX,Healthcare,Biotechnology,XLV
+A,Healthcare,Diagnostics & Research,XLV
+CRL,Healthcare,Diagnostics & Research,XLV
+DGX,Healthcare,Diagnostics & Research,XLV
+DHR,Healthcare,Diagnostics & Research,XLV
+IDXX,Healthcare,Diagnostics & Research,XLV
+IQV,Healthcare,Diagnostics & Research,XLV
+LH,Healthcare,Diagnostics & Research,XLV
+MTD,Healthcare,Diagnostics & Research,XLV
+RVTY,Healthcare,Diagnostics & Research,XLV
+TMO,Healthcare,Diagnostics & Research,XLV
+WAT,Healthcare,Diagnostics & Research,XLV
+ABBV,Healthcare,Drug Manufacturers - General,XLV
+AMGN,Healthcare,Drug Manufacturers - General,XLV
+BIIB,Healthcare,Drug Manufacturers - General,XLV
+BMY,Healthcare,Drug Manufacturers - General,XLV
+GILD,Healthcare,Drug Manufacturers - General,XLV
+JNJ,Healthcare,Drug Manufacturers - General,XLV
+LLY,Healthcare,Drug Manufacturers - General,XLV
+MRK,Healthcare,Drug Manufacturers - General,XLV
+PFE,Healthcare,Drug Manufacturers - General,XLV
+VTRS,Healthcare,Drug Manufacturers - Specialty & Generic,XLV
+ZTS,Healthcare,Drug Manufacturers - Specialty & Generic,XLV
+CI,Healthcare,Healthcare Plans,XLV
+CNC,Healthcare,Healthcare Plans,XLV
+CVS,Healthcare,Healthcare Plans,XLV
+ELV,Healthcare,Healthcare Plans,XLV
+HUM,Healthcare,Healthcare Plans,XLV
+MOH,Healthcare,Healthcare Plans,XLV
+UNH,Healthcare,Healthcare Plans,XLV
+DVA,Healthcare,Medical Care Facilities,XLV
+HCA,Healthcare,Medical Care Facilities,XLV
+UHS,Healthcare,Medical Care Facilities,XLV
+ABT,Healthcare,Medical Devices,XLV
+BSX,Healthcare,Medical Devices,XLV
+DXCM,Healthcare,Medical Devices,XLV
+EW,Healthcare,Medical Devices,XLV
+GEHC,Healthcare,Medical Devices,XLV
+MDT,Healthcare,Medical Devices,XLV
+PODD,Healthcare,Medical Devices,XLV
+STE,Healthcare,Medical Devices,XLV
+SYK,Healthcare,Medical Devices,XLV
+ZBH,Healthcare,Medical Devices,XLV
+CAH,Healthcare,Medical Distribution,XLV
+COR,Healthcare,Medical Distribution,XLV
+HSIC,Healthcare,Medical Distribution,XLV
+MCK,Healthcare,Medical Distribution,XLV
+ALGN,Healthcare,Medical Instruments & Supplies,XLV
+BAX,Healthcare,Medical Instruments & Supplies,XLV
+BDX,Healthcare,Medical Instruments & Supplies,XLV
+COO,Healthcare,Medical Instruments & Supplies,XLV
+HOLX,Healthcare,Medical Instruments & Supplies,XLV
+ISRG,Healthcare,Medical Instruments & Supplies,XLV
+RMD,Healthcare,Medical Instruments & Supplies,XLV
+SOLV,Healthcare,Medical Instruments & Supplies,XLV
+WST,Healthcare,Medical Instruments & Supplies,XLV
+WBA,Healthcare,Pharmaceutical Retailers,XLV
+AXON,Industrials,Aerospace & Defense,XLI
+BA,Industrials,Aerospace & Defense,XLI
+GD,Industrials,Aerospace & Defense,XLI
+GE,Industrials,Aerospace & Defense,XLI
+HII,Industrials,Aerospace & Defense,XLI
+HWM,Industrials,Aerospace & Defense,XLI
+LHX,Industrials,Aerospace & Defense,XLI
+LMT,Industrials,Aerospace & Defense,XLI
+NOC,Industrials,Aerospace & Defense,XLI
+RTX,Industrials,Aerospace & Defense,XLI
+TDG,Industrials,Aerospace & Defense,XLI
+TXT,Industrials,Aerospace & Defense,XLI
+DAL,Industrials,Airlines,XLI
+LUV,Industrials,Airlines,XLI
+UAL,Industrials,Airlines,XLI
+BLDR,Industrials,Building Products & Equipment,XLI
+CARR,Industrials,Building Products & Equipment,XLI
+JCI,Industrials,Building Products & Equipment,XLI
+LII,Industrials,Building Products & Equipment,XLI
+MAS,Industrials,Building Products & Equipment,XLI
+TT,Industrials,Building Products & Equipment,XLI
+HON,Industrials,Conglomerates,XLI
+MMM,Industrials,Conglomerates,XLI
+EFX,Industrials,Consulting Services,XLI
+VRSK,Industrials,Consulting Services,XLI
+HUBB,Industrials,Electrical Equipment & Parts,XLI
+J,Industrials,Engineering & Construction,XLI
+PWR,Industrials,Engineering & Construction,XLI
+CAT,Industrials,Farm & Heavy Construction Machinery,XLI
+DE,Industrials,Farm & Heavy Construction Machinery,XLI
+PCAR,Industrials,Farm & Heavy Construction Machinery,XLI
+FAST,Industrials,Industrial Distribution,XLI
+GWW,Industrials,Industrial Distribution,XLI
+POOL,Industrials,Industrial Distribution,XLI
+CHRW,Industrials,Integrated Freight & Logistics,XLI
+EXPD,Industrials,Integrated Freight & Logistics,XLI
+FDX,Industrials,Integrated Freight & Logistics,XLI
+JBHT,Industrials,Integrated Freight & Logistics,XLI
+UPS,Industrials,Integrated Freight & Logistics,XLI
+VLTO,Industrials,Pollution & Treatment Controls,XLI
+CSX,Industrials,Railroads,XLI
+NSC,Industrials,Railroads,XLI
+UNP,Industrials,Railroads,XLI
+WAB,Industrials,Railroads,XLI
+URI,Industrials,Rental & Leasing Services,XLI
+ALLE,Industrials,Security & Protection Services,XLI
+CPRT,Industrials,Specialty Business Services,XLI
+CTAS,Industrials,Specialty Business Services,XLI
+AME,Industrials,Specialty Industrial Machinery,XLI
+AOS,Industrials,Specialty Industrial Machinery,XLI
+CMI,Industrials,Specialty Industrial Machinery,XLI
+DOV,Industrials,Specialty Industrial Machinery,XLI
+EMR,Industrials,Specialty Industrial Machinery,XLI
+ETN,Industrials,Specialty Industrial Machinery,XLI
+GEV,Industrials,Specialty Industrial Machinery,XLI
+GNRC,Industrials,Specialty Industrial Machinery,XLI
+IEX,Industrials,Specialty Industrial Machinery,XLI
+IR,Industrials,Specialty Industrial Machinery,XLI
+ITW,Industrials,Specialty Industrial Machinery,XLI
+NDSN,Industrials,Specialty Industrial Machinery,XLI
+OTIS,Industrials,Specialty Industrial Machinery,XLI
+PH,Industrials,Specialty Industrial Machinery,XLI
+PNR,Industrials,Specialty Industrial Machinery,XLI
+ROK,Industrials,Specialty Industrial Machinery,XLI
+XYL,Industrials,Specialty Industrial Machinery,XLI
+SNA,Industrials,Tools & Accessories,XLI
+SWK,Industrials,Tools & Accessories,XLI
+ODFL,Industrials,Trucking,XLI
+RSG,Industrials,Waste Management,XLI
+WM,Industrials,Waste Management,XLI
+CBRE,Real Estate,Real Estate Services,XLRE
+CSGP,Real Estate,Real Estate Services,XLRE
+VICI,Real Estate,REIT - Diversified,XLRE
+DOC,Real Estate,REIT - Healthcare Facilities,XLRE
+VTR,Real Estate,REIT - Healthcare Facilities,XLRE
+WELL,Real Estate,REIT - Healthcare Facilities,XLRE
+HST,Real Estate,REIT - Hotel & Motel,XLRE
+EXR,Real Estate,REIT - Industrial,XLRE
+PLD,Real Estate,REIT - Industrial,XLRE
+PSA,Real Estate,REIT - Industrial,XLRE
+ARE,Real Estate,REIT - Office,XLRE
+BXP,Real Estate,REIT - Office,XLRE
+AVB,Real Estate,REIT - Residential,XLRE
+CPT,Real Estate,REIT - Residential,XLRE
+EQR,Real Estate,REIT - Residential,XLRE
+ESS,Real Estate,REIT - Residential,XLRE
+INVH,Real Estate,REIT - Residential,XLRE
+MAA,Real Estate,REIT - Residential,XLRE
+UDR,Real Estate,REIT - Residential,XLRE
+FRT,Real Estate,REIT - Retail,XLRE
+KIM,Real Estate,REIT - Retail,XLRE
+O,Real Estate,REIT - Retail,XLRE
+REG,Real Estate,REIT - Retail,XLRE
+SPG,Real Estate,REIT - Retail,XLRE
+AMT,Real Estate,REIT - Specialty,XLRE
+CCI,Real Estate,REIT - Specialty,XLRE
+DLR,Real Estate,REIT - Specialty,XLRE
+EQIX,Real Estate,REIT - Specialty,XLRE
+IRM,Real Estate,REIT - Specialty,XLRE
+SBAC,Real Estate,REIT - Specialty,XLRE
+WY,Real Estate,REIT - Specialty,XLRE
+CSCO,Technology,Communication Equipment,XLK
+HPE,Technology,Communication Equipment,XLK
+MSI,Technology,Communication Equipment,XLK
+ZBRA,Technology,Communication Equipment,XLK
+ANET,Technology,Computer Hardware,XLK
+DELL,Technology,Computer Hardware,XLK
+HPQ,Technology,Computer Hardware,XLK
+SMCI,Technology,Computer Hardware,XLK
+STX,Technology,Computer Hardware,XLK
+WDC,Technology,Computer Hardware,XLK
+AAPL,Technology,Consumer Electronics,XLK
+APH,Technology,Electronic Components,XLK
+GLW,Technology,Electronic Components,XLK
+JBL,Technology,Electronic Components,XLK
+TEL,Technology,Electronic Components,XLK
+ACN,Technology,Information Technology Services,XLK
+BR,Technology,Information Technology Services,XLK
+CDW,Technology,Information Technology Services,XLK
+CTSH,Technology,Information Technology Services,XLK
+EPAM,Technology,Information Technology Services,XLK
+FI,Technology,Information Technology Services,XLK
+FIS,Technology,Information Technology Services,XLK
+IBM,Technology,Information Technology Services,XLK
+IT,Technology,Information Technology Services,XLK
+JKHY,Technology,Information Technology Services,XLK
+LDOS,Technology,Information Technology Services,XLK
+FTV,Technology,Scientific & Technical Instruments,XLK
+GRMN,Technology,Scientific & Technical Instruments,XLK
+KEYS,Technology,Scientific & Technical Instruments,XLK
+TDY,Technology,Scientific & Technical Instruments,XLK
+TRMB,Technology,Scientific & Technical Instruments,XLK
+AMAT,Technology,Semiconductor Equipment & Materials,XLK
+KLAC,Technology,Semiconductor Equipment & Materials,XLK
+LRCX,Technology,Semiconductor Equipment & Materials,XLK
+TER,Technology,Semiconductor Equipment & Materials,XLK
+ADI,Technology,Semiconductors,XLK
+AMD,Technology,Semiconductors,XLK
+AVGO,Technology,Semiconductors,XLK
+INTC,Technology,Semiconductors,XLK
+MCHP,Technology,Semiconductors,XLK
+MPWR,Technology,Semiconductors,XLK
+MU,Technology,Semiconductors,XLK
+NVDA,Technology,Semiconductors,XLK
+NXPI,Technology,Semiconductors,XLK
+ON,Technology,Semiconductors,XLK
+QCOM,Technology,Semiconductors,XLK
+SWKS,Technology,Semiconductors,XLK
+TXN,Technology,Semiconductors,XLK
+ADBE,Technology,Software - Application,XLK
+ADP,Technology,Software - Application,XLK
+ADSK,Technology,Software - Application,XLK
+CDNS,Technology,Software - Application,XLK
+CRM,Technology,Software - Application,XLK
+DAY,Technology,Software - Application,XLK
+DDOG,Technology,Software - Application,XLK
+FICO,Technology,Software - Application,XLK
+INTU,Technology,Software - Application,XLK
+NOW,Technology,Software - Application,XLK
+PAYC,Technology,Software - Application,XLK
+PAYX,Technology,Software - Application,XLK
+PTC,Technology,Software - Application,XLK
+ROP,Technology,Software - Application,XLK
+TYL,Technology,Software - Application,XLK
+UBER,Technology,Software - Application,XLK
+WDAY,Technology,Software - Application,XLK
+AKAM,Technology,Software - Infrastructure,XLK
+CPAY,Technology,Software - Infrastructure,XLK
+CRWD,Technology,Software - Infrastructure,XLK
+FFIV,Technology,Software - Infrastructure,XLK
+FTNT,Technology,Software - Infrastructure,XLK
+GDDY,Technology,Software - Infrastructure,XLK
+GEN,Technology,Software - Infrastructure,XLK
+GPN,Technology,Software - Infrastructure,XLK
+MSFT,Technology,Software - Infrastructure,XLK
+NTAP,Technology,Software - Infrastructure,XLK
+ORCL,Technology,Software - Infrastructure,XLK
+PANW,Technology,Software - Infrastructure,XLK
+PLTR,Technology,Software - Infrastructure,XLK
+SNPS,Technology,Software - Infrastructure,XLK
+VRSN,Technology,Software - Infrastructure,XLK
+XYZ,Technology,Software - Infrastructure,XLK
+ENPH,Technology,Solar,XLK
+FSLR,Technology,Solar,XLK
+AES,Utilities,Utilities - Diversified,XLU
+SRE,Utilities,Utilities - Diversified,XLU
+NRG,Utilities,Utilities - Independent Power Producers,XLU
+VST,Utilities,Utilities - Independent Power Producers,XLU
+AEE,Utilities,Utilities - Regulated Electric,XLU
+AEP,Utilities,Utilities - Regulated Electric,XLU
+CMS,Utilities,Utilities - Regulated Electric,XLU
+CNP,Utilities,Utilities - Regulated Electric,XLU
+D,Utilities,Utilities - Regulated Electric,XLU
+DTE,Utilities,Utilities - Regulated Electric,XLU
+DUK,Utilities,Utilities - Regulated Electric,XLU
+ED,Utilities,Utilities - Regulated Electric,XLU
+EIX,Utilities,Utilities - Regulated Electric,XLU
+ES,Utilities,Utilities - Regulated Electric,XLU
+ETR,Utilities,Utilities - Regulated Electric,XLU
+EVRG,Utilities,Utilities - Regulated Electric,XLU
+EXC,Utilities,Utilities - Regulated Electric,XLU
+FE,Utilities,Utilities - Regulated Electric,XLU
+LNT,Utilities,Utilities - Regulated Electric,XLU
+NEE,Utilities,Utilities - Regulated Electric,XLU
+PCG,Utilities,Utilities - Regulated Electric,XLU
+PEG,Utilities,Utilities - Regulated Electric,XLU
+PNW,Utilities,Utilities - Regulated Electric,XLU
+PPL,Utilities,Utilities - Regulated Electric,XLU
+SO,Utilities,Utilities - Regulated Electric,XLU
+WEC,Utilities,Utilities - Regulated Electric,XLU
+XEL,Utilities,Utilities - Regulated Electric,XLU
+ATO,Utilities,Utilities - Regulated Gas,XLU
+NI,Utilities,Utilities - Regulated Gas,XLU
+AWK,Utilities,Utilities - Regulated Water,XLU
+CEG,Utilities,Utilities - Renewable,XLU

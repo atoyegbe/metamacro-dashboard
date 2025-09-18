@@ -1,0 +1,102 @@
+Ticker,Sector,SubIndustry,SectorIndex
+LIN,Basic Materials,Specialty Chemicals,XLB
+EA,Communication Services,Electronic Gaming & Multimedia,XLC
+GOOG,Communication Services,Internet Content & Information,XLC
+GOOGL,Communication Services,Internet Content & Information,XLC
+META,Communication Services,Internet Content & Information,XLC
+NFLX,Communication Services,Entertainment,XLC
+APP,Communication Services,Advertising Agencies,XLC
+CHTR,Communication Services,Telecom Services,XLC
+CMCSA,Communication Services,Telecom Services,XLC
+TMUS,Communication Services,Telecom Services,XLC
+TTD,Communication Services,Advertising Agencies,XLC
+TTWO,Communication Services,Electronic Gaming & Multimedia,XLC
+WBD,Communication Services,Entertainment,XLC
+TSLA,Consumer Cyclical,Auto Manufacturers,XLY
+ROST,Consumer Cyclical,Apparel Retail,XLY
+SBUX,Consumer Cyclical,Restaurants,XLY
+BKNG,Consumer Cyclical,Travel Services,XLY
+DASH,Consumer Cyclical,Internet Retail,XLY
+AMZN,Consumer Cyclical,Internet Retail,XLY
+ABNB,Consumer Cyclical,Travel Services,XLY
+ORLY,Consumer Cyclical,Auto Parts,XLY
+PDD,Consumer Cyclical,Internet Retail,XLY
+LULU,Consumer Cyclical,Apparel Retail,XLY
+MAR,Consumer Cyclical,Lodging,XLY
+MELI,Consumer Cyclical,Internet Retail,XLY
+MDLZ,Consumer Defensive,Confectioners,XLP
+MNST,Consumer Defensive,Beverages - Non-Alcoholic,XLP
+PEP,Consumer Defensive,Beverages - Non-Alcoholic,XLP
+KDP,Consumer Defensive,Beverages - Non-Alcoholic,XLP
+KHC,Consumer Defensive,Packaged Foods,XLP
+COST,Consumer Defensive,Discount Stores,XLP
+CCEP,Consumer Defensive,Beverages - Non-Alcoholic,XLP
+BKR,Energy,Oil & Gas Equipment & Services,XLE
+FANG,Energy,Oil & Gas E&P,XLE
+PYPL,Financial,Credit Services,XLF
+REGN,Healthcare,Biotechnology,XLV
+VRTX,Healthcare,Biotechnology,XLV
+GEHC,Healthcare,Medical Devices,XLV
+IDXX,Healthcare,Diagnostics & Research,XLV
+GILD,Healthcare,Drug Manufacturers - General,XLV
+ISRG,Healthcare,Medical Instruments & Supplies,XLV
+DXCM,Healthcare,Medical Devices,XLV
+AMGN,Healthcare,Drug Manufacturers - General,XLV
+AZN,Healthcare,Drug Manufacturers - General,XLV
+BIIB,Healthcare,Drug Manufacturers - General,XLV
+AXON,Industrials,Aerospace & Defense,XLI
+CSX,Industrials,Railroads,XLI
+CTAS,Industrials,Specialty Business Services,XLI
+CPRT,Industrials,Specialty Business Services,XLI
+HON,Industrials,Conglomerates,XLI
+FAST,Industrials,Industrial Distribution,XLI
+ODFL,Industrials,Trucking,XLI
+VRSK,Industrials,Consulting Services,XLI
+PCAR,Industrials,Farm & Heavy Construction Machinery,XLI
+TRI,Industrials,Specialty Business Services,XLI
+CSGP,Real Estate,Real Estate Services,XLRE
+DDOG,Technology,Software - Application,XLK
+CTSH,Technology,Information Technology Services,XLK
+CRWD,Technology,Software - Infrastructure,XLK
+CSCO,Technology,Communication Equipment,XLK
+CDNS,Technology,Software - Application,XLK
+CDW,Technology,Information Technology Services,XLK
+ARM,Technology,Semiconductors,XLK
+ASML,Technology,Semiconductor Equipment & Materials,XLK
+AVGO,Technology,Semiconductors,XLK
+AAPL,Technology,Consumer Electronics,XLK
+AMAT,Technology,Semiconductor Equipment & Materials,XLK
+AMD,Technology,Semiconductors,XLK
+ADBE,Technology,Software - Application,XLK
+ADI,Technology,Semiconductors,XLK
+ADP,Technology,Software - Application,XLK
+ADSK,Technology,Software - Application,XLK
+ON,Technology,Semiconductors,XLK
+NVDA,Technology,Semiconductors,XLK
+NXPI,Technology,Semiconductors,XLK
+PLTR,Technology,Software - Infrastructure,XLK
+PANW,Technology,Software - Infrastructure,XLK
+PAYX,Technology,Software - Application,XLK
+MRVL,Technology,Semiconductors,XLK
+MSFT,Technology,Software - Infrastructure,XLK
+MSTR,Technology,Software - Application,XLK
+MU,Technology,Semiconductors,XLK
+MCHP,Technology,Semiconductors,XLK
+FTNT,Technology,Software - Infrastructure,XLK
+GFS,Technology,Semiconductors,XLK
+INTC,Technology,Semiconductors,XLK
+INTU,Technology,Software - Application,XLK
+KLAC,Technology,Semiconductor Equipment & Materials,XLK
+LRCX,Technology,Semiconductor Equipment & Materials,XLK
+TXN,Technology,Semiconductors,XLK
+ROP,Technology,Software - Application,XLK
+QCOM,Technology,Semiconductors,XLK
+SHOP,Technology,Software - Application,XLK
+SNPS,Technology,Software - Infrastructure,XLK
+TEAM,Technology,Software - Application,XLK
+WDAY,Technology,Software - Application,XLK
+ZS,Technology,Software - Infrastructure,XLK
+XEL,Utilities,Utilities - Regulated Electric,XLU
+EXC,Utilities,Utilities - Regulated Electric,XLU
+AEP,Utilities,Utilities - Regulated Electric,XLU
+CEG,Utilities,Utilities - Renewable,XLU
