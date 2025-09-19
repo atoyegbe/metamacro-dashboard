@@ -227,86 +227,145 @@ def _classify_transition(close, hi, lo, mid, atr_val, near_thresh_atr=NEAR_THRES
 
 
 def classify_regime(df: pd.DataFrame, atr_len: int = ATR_PERIOD) -> pd.DataFrame:
-    """Yearly regime using 28-day OR."""
+    """Safe yearly regime classification with comprehensive error handling."""
+    empty_result = pd.DataFrame(columns=["Macro","Micro","Transition","Close","Hi","Lo","Mid"])
+    
     if df is None or df.empty:
-        return pd.DataFrame(columns=["Macro","Micro","Transition","Close","Hi","Lo","Mid"])
-    hi = df["High"].rolling(YEARLY_RANGE_DAYS).max()
-    lo = df["Low"].rolling(YEARLY_RANGE_DAYS).min()
-    mid = (hi + lo) / 2
-    atr_val = atr(df, atr_len)
-    out = []
-    for i in range(len(df)):
-        if pd.isna(hi.iloc[i]) or pd.isna(lo.iloc[i]):
-            out.append((np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan))
-            continue
-        close = df["Close"].iloc[i]
-        macro = _classify_macro(close, hi.iloc[i], lo.iloc[i], mid.iloc[i])
-        micro = _classify_micro(df.iloc[:i+1], macro=macro)
-        trans = _classify_transition(close, hi.iloc[i], lo.iloc[i], mid.iloc[i], atr_val.iloc[i])
-        out.append((macro, micro, trans, close, hi.iloc[i], lo.iloc[i], mid.iloc[i]))
-    return pd.DataFrame(out, columns=["Macro","Micro","Transition","Close","Hi","Lo","Mid"], index=df.index)
+        return empty_result
+        
+    # Ensure required columns exist
+    required_cols = ["Open", "High", "Low", "Close"]
+    if not all(col in df.columns for col in required_cols):
+        return empty_result
+        
+    # Ensure minimum data points
+    if len(df) < YEARLY_RANGE_DAYS:
+        return empty_result
+        
+    try:
+        hi = df["High"].rolling(YEARLY_RANGE_DAYS, min_periods=1).max()
+        lo = df["Low"].rolling(YEARLY_RANGE_DAYS, min_periods=1).min()
+        mid = (hi + lo) / 2
+        atr_val = atr(df, atr_len)
+        
+        out = []
+        for i in range(len(df)):
+            if pd.isna(hi.iloc[i]) or pd.isna(lo.iloc[i]):
+                out.append((np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan))
+                continue
+                
+            close = df["Close"].iloc[i]
+            macro = _classify_macro(close, hi.iloc[i], lo.iloc[i], mid.iloc[i])
+            
+            # Safe micro classification
+            micro_df = df.iloc[:i+1] if i > 0 else df.iloc[:1]
+            micro = _classify_micro(micro_df, macro=macro) if len(micro_df) >= 2 else "Neutral"
+            
+            # Safe transition classification
+            atr_current = atr_val.iloc[i] if i < len(atr_val) and pd.notna(atr_val.iloc[i]) else 0
+            trans = _classify_transition(close, hi.iloc[i], lo.iloc[i], mid.iloc[i], atr_current)
+            
+            out.append((macro, micro, trans, close, hi.iloc[i], lo.iloc[i], mid.iloc[i]))
+            
+        return pd.DataFrame(out, columns=["Macro","Micro","Transition","Close","Hi","Lo","Mid"], index=df.index)
+        
+    except Exception as e:
+        print(f"Error in classify_regime: {e}")
+        return empty_result
 
 
 def classify_weekly_regime(df: pd.DataFrame, atr_len: int = 14) -> pd.DataFrame:
-    """Weekly regime anchored to calendar weeks (Monday start)."""
-    if df is None or df.empty:
-        return pd.DataFrame(columns=["WeeklyMacro","WeeklyMicro","WeeklyTransition","Close","Hi","Lo","Mid"])
+    """Safe weekly regime classification."""
+    empty_result = pd.DataFrame(columns=["WeeklyMacro","WeeklyMicro","WeeklyTransition","Close","Hi","Lo","Mid"])
+    
+    if df is None or df.empty or len(df) < 7:  # Need at least a week of data
+        return empty_result
+        
+    try:
+        # Resample to weekly
+        weekly = df.resample("W-MON", label="left", closed="left").agg({
+            "High": "max",
+            "Low": "min",
+            "Close": "last"
+        }).dropna()
+        
+        if weekly.empty:
+            return empty_result
+            
+        hi = weekly["High"]
+        lo = weekly["Low"]
+        mid = (hi + lo) / 2
+        atr_val = atr(df, atr_len).resample("W-MON", label="left", closed="left").last()
+        
+        out = []
+        for i in range(len(weekly)):
+            if pd.isna(hi.iloc[i]) or pd.isna(lo.iloc[i]):
+                out.append((np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan))
+                continue
+                
+            close = weekly["Close"].iloc[i]
+            macro = _classify_macro(close, hi.iloc[i], lo.iloc[i], mid.iloc[i])
+            
+            # Safe micro calculation using data up to current week
+            micro_data = df.loc[:weekly.index[i]]
+            micro = _classify_micro(micro_data, macro=macro) if len(micro_data) >= 2 else "Neutral"
+            
+            # Safe transition calculation
+            atr_current = atr_val.iloc[i] if i < len(atr_val) and pd.notna(atr_val.iloc[i]) else 0
+            trans = _classify_transition(close, hi.iloc[i], lo.iloc[i], mid.iloc[i], atr_current)
+            
+            out.append((macro, micro, trans, close, hi.iloc[i], lo.iloc[i], mid.iloc[i]))
 
-    # Resample to weekly anchored bars (Mon–Fri)
-    weekly = df.resample("W-MON", label="left", closed="left").agg({
-        "High": "max",
-        "Low": "min",
-        "Close": "last"
-    }).dropna()
-
-    hi = weekly["High"]
-    lo = weekly["Low"]
-    mid = (hi + lo) / 2
-    atr_val = atr(df, atr_len).resample("W-MON").last()
-
-    out = []
-    for i in range(len(weekly)):
-        if pd.isna(hi.iloc[i]) or pd.isna(lo.iloc[i]):
-            out.append((np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan))
-            continue
-        close = weekly["Close"].iloc[i]
-        macro = _classify_macro(close, hi.iloc[i], lo.iloc[i], mid.iloc[i])
-        # Use daily data up to that week for micro trend
-        micro = _classify_micro(df.loc[:weekly.index[i]], macro=macro)
-        trans = _classify_transition(close, hi.iloc[i], lo.iloc[i], mid.iloc[i], atr_val.iloc[i] if i < len(atr_val) else 0)
-        out.append((macro, micro, trans, close, hi.iloc[i], lo.iloc[i], mid.iloc[i]))
-
-    return pd.DataFrame(out, columns=["WeeklyMacro","WeeklyMicro","WeeklyTransition","Close","Hi","Lo","Mid"], index=weekly.index)
+        return pd.DataFrame(out, columns=["WeeklyMacro","WeeklyMicro","WeeklyTransition","Close","Hi","Lo","Mid"], index=weekly.index)
+        
+    except Exception as e:
+        print(f"Error in classify_weekly_regime: {e}")
+        return empty_result
 
 
 def classify_daily_regime(df: pd.DataFrame, atr_len: int = 14) -> pd.DataFrame:
-    """Daily regime anchored to calendar days."""
+    """Safe daily regime classification."""
+    empty_result = pd.DataFrame(columns=["DailyMacro","DailyMicro","DailyTransition","Close","Hi","Lo","Mid"])
+    
     if df is None or df.empty:
-        return pd.DataFrame(columns=["DailyMacro","DailyMicro","DailyTransition","Close","Hi","Lo","Mid"])
+        return empty_result
+        
+    try:
+        # Resample to daily
+        daily = df.resample("1D").agg({
+            "High": "max",
+            "Low": "min",
+            "Close": "last"
+        }).dropna()
+        
+        if daily.empty:
+            return empty_result
+            
+        hi = daily["High"]
+        lo = daily["Low"]
+        mid = (hi + lo) / 2
+        atr_val = atr(df, atr_len).resample("1D").last()
+        
+        out = []
+        for i in range(len(daily)):
+            close = daily["Close"].iloc[i]
+            macro = _classify_macro(close, hi.iloc[i], lo.iloc[i], mid.iloc[i])
+            
+            # Safe micro calculation
+            micro_data = df.loc[:daily.index[i]]
+            micro = _classify_micro(micro_data, macro=macro) if len(micro_data) >= 2 else "Neutral"
+            
+            # Safe transition calculation
+            atr_current = atr_val.iloc[i] if i < len(atr_val) and pd.notna(atr_val.iloc[i]) else 0
+            trans = _classify_transition(close, hi.iloc[i], lo.iloc[i], mid.iloc[i], atr_current)
+            
+            out.append((macro, micro, trans, close, hi.iloc[i], lo.iloc[i], mid.iloc[i]))
 
-    # Resample to daily bars (just in case interval < 1d)
-    daily = df.resample("1D").agg({
-        "High": "max",
-        "Low": "min",
-        "Close": "last"
-    }).dropna()
-
-    hi = daily["High"]
-    lo = daily["Low"]
-    mid = (hi + lo) / 2
-    atr_val = atr(df, atr_len).resample("1D").last()
-
-    out = []
-    for i in range(len(daily)):
-        close = daily["Close"].iloc[i]
-        macro = _classify_macro(close, hi.iloc[i], lo.iloc[i], mid.iloc[i])
-        # Use intraday data up to that day for micro trend
-        micro = _classify_micro(df.loc[:daily.index[i]], macro=macro)
-        trans = _classify_transition(close, hi.iloc[i], lo.iloc[i], mid.iloc[i], atr_val.iloc[i] if i < len(atr_val) else 0)
-        out.append((macro, micro, trans, close, hi.iloc[i], lo.iloc[i], mid.iloc[i]))
-
-    return pd.DataFrame(out, columns=["DailyMacro","DailyMicro","DailyTransition","Close","Hi","Lo","Mid"], index=daily.index)
-
+        return pd.DataFrame(out, columns=["DailyMacro","DailyMicro","DailyTransition","Close","Hi","Lo","Mid"], index=daily.index)
+        
+    except Exception as e:
+        print(f"Error in classify_daily_regime: {e}")
+        return empty_result
 
 def compute_latest_labels(
     entity: str,
@@ -317,25 +376,54 @@ def compute_latest_labels(
 ) -> dict:
     """Latest values across Yearly, Weekly, Daily, and Session regimes."""
     row = {"Entity": entity}
-    if isinstance(y, pd.DataFrame) and not y.empty:
-        row["Macro"] = y["Macro"].iloc[-1]
-        row["Micro"] = y["Micro"].iloc[-1]
-        row["Transition"] = y["Transition"].iloc[-1]
-        row["Close"] = y["Close"].iloc[-1]
-    if isinstance(w, pd.DataFrame) and not w.empty:
-        row["WeeklyMacro"] = w["WeeklyMacro"].iloc[-1]
-        row["WeeklyMicro"] = w["WeeklyMicro"].iloc[-1]
-        row["WeeklyTransition"] = w["WeeklyTransition"].iloc[-1]
-    if isinstance(d, pd.DataFrame) and not d.empty:
-        row["DailyMacro"] = d["DailyMacro"].iloc[-1]
-        row["DailyMicro"] = d["DailyMicro"].iloc[-1]
-        row["DailyTransition"] = d["DailyTransition"].iloc[-1]
-    if isinstance(s, pd.DataFrame) and not s.empty:
-        last = s.iloc[-1]
-        row["Session"] = last["Session"]
-        row["SessionMacro"] = last["Macro"]
-        row["SessionMicro"] = last["Micro"]
-        row["SessionTransition"] = last["Transition"]
+    
+    # Safe access to yearly data
+    if isinstance(y, pd.DataFrame) and not y.empty and len(y) > 0:
+        try:
+            row["Macro"] = y["Macro"].iloc[-1] if "Macro" in y.columns else "N/A"
+            row["Micro"] = y["Micro"].iloc[-1] if "Micro" in y.columns else "N/A"
+            row["Transition"] = y["Transition"].iloc[-1] if "Transition" in y.columns else "None"
+            row["Close"] = y["Close"].iloc[-1] if "Close" in y.columns else float('nan')
+        except (IndexError, KeyError):
+            row.update({"Macro": "N/A", "Micro": "N/A", "Transition": "None", "Close": float('nan')})
+    else:
+        row.update({"Macro": "N/A", "Micro": "N/A", "Transition": "None", "Close": float('nan')})
+    
+    # Safe access to weekly data
+    if isinstance(w, pd.DataFrame) and not w.empty and len(w) > 0:
+        try:
+            row["WeeklyMacro"] = w["WeeklyMacro"].iloc[-1] if "WeeklyMacro" in w.columns else "N/A"
+            row["WeeklyMicro"] = w["WeeklyMicro"].iloc[-1] if "WeeklyMicro" in w.columns else "N/A"
+            row["WeeklyTransition"] = w["WeeklyTransition"].iloc[-1] if "WeeklyTransition" in w.columns else "None"
+        except (IndexError, KeyError):
+            row.update({"WeeklyMacro": "N/A", "WeeklyMicro": "N/A", "WeeklyTransition": "None"})
+    else:
+        row.update({"WeeklyMacro": "N/A", "WeeklyMicro": "N/A", "WeeklyTransition": "None"})
+    
+    # Safe access to daily data
+    if isinstance(d, pd.DataFrame) and not d.empty and len(d) > 0:
+        try:
+            row["DailyMacro"] = d["DailyMacro"].iloc[-1] if "DailyMacro" in d.columns else "N/A"
+            row["DailyMicro"] = d["DailyMicro"].iloc[-1] if "DailyMicro" in d.columns else "N/A"
+            row["DailyTransition"] = d["DailyTransition"].iloc[-1] if "DailyTransition" in d.columns else "None"
+        except (IndexError, KeyError):
+            row.update({"DailyMacro": "N/A", "DailyMicro": "N/A", "DailyTransition": "None"})
+    else:
+        row.update({"DailyMacro": "N/A", "DailyMicro": "N/A", "DailyTransition": "None"})
+    
+    # Safe access to session data
+    if isinstance(s, pd.DataFrame) and not s.empty and len(s) > 0:
+        try:
+            last = s.iloc[-1]
+            row["Session"] = last.get("Session", "N/A")
+            row["SessionMacro"] = last.get("Macro", "N/A")
+            row["SessionMicro"] = last.get("Micro", "N/A")
+            row["SessionTransition"] = last.get("Transition", "None")
+        except (IndexError, KeyError):
+            row.update({"Session": "N/A", "SessionMacro": "N/A", "SessionMicro": "N/A", "SessionTransition": "None"})
+    else:
+        row.update({"Session": "N/A", "SessionMacro": "N/A", "SessionMicro": "N/A", "SessionTransition": "None"})
+    
     return row
 
 
