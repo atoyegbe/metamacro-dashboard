@@ -26,7 +26,7 @@ class ResearchPackView(Container):
 
                     yield Static("✍️ Add Market Commentary:")
                     yield TextArea(
-                        placeholder="Write your research notes here...",
+                        text="Write your research notes here...",
                         id="commentary-input"
                     )
 

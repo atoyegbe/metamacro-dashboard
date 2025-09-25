@@ -396,24 +396,18 @@ ProgressBar > .bar--complete {
     scrollbar-corner-color: #374151;
 }
 
-/* Responsive adjustments */
-@media (max-width: 80) {
-    .kpi-card {
-        min-width: 15;
-    }
-    .card {
-        margin: 0;
-        padding: 1;
-    }
+/* Responsive adjustments - Textual doesn't support @media queries */
+/* These styles are applied globally instead */
+.kpi-card-compact {
+    min-width: 15;
+    height: 6;
 }
 
-@media (max-width: 60) {
-    .kpi-card {
-        min-width: 12;
-        height: 6;
-    }
-    
-    .summary-stat {
-        padding: 0 1;
-    }
+.card-compact {
+    margin: 0;
+    padding: 1;
+}
+
+.summary-stat-compact {
+    padding: 0 1;
 }

@@ -25,11 +25,11 @@ class MarketComparisonsView(Container):
                 with Container(classes="card-content"):
                     with Horizontal():
                         yield Static("Select first entity (LHS): ")
-                        yield Select([("", "Select...")], value="", id="lhs-select")
+                        yield Select([("Select...", "Select...")], value="Select...", id="lhs-select")
 
                     with Horizontal():
                         yield Static("Select second entity (RHS): ")
-                        yield Select([("", "Select...")], value="", id="rhs-select")
+                        yield Select([("Select...", "Select...")], value="Select...", id="rhs-select")
 
                     with Horizontal():
                         yield Static("Filter Macro Regime: ")
@@ -70,7 +70,7 @@ class MarketComparisonsView(Container):
 
             # Get available entities
             tickers = self.universe_data["tickers"]
-            entity_options = [("", "Select...")]
+            entity_options = [("Select...", "Select...")]
             for ticker in sorted(tickers):
                 entity_options.append((ticker, ticker))
 
@@ -82,7 +82,7 @@ class MarketComparisonsView(Container):
 
     async def update_comparison(self):
         """Update the comparison analysis"""
-        if not self.lhs_choice or not self.rhs_choice:
+        if not self.lhs_choice or not self.rhs_choice or self.lhs_choice == "Select..." or self.rhs_choice == "Select...":
             return
 
         try:
