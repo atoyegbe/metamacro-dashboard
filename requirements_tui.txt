@@ -1,0 +1,37 @@
+# MetaMacro TUI Requirements
+# Core TUI framework
+textual==0.45.1
+rich==13.7.0
+
+# Terminal plotting
+plotext==5.2.8
+
+# Data processing (existing dependencies)
+numpy==2.3.2
+pandas==2.3.1
+yfinance==0.2.65
+
+# Date/time handling
+python-dateutil==2.9.0.post0
+pytz==2025.2
+tzdata==2025.2
+
+# Export functionality
+reportlab==4.4.3
+xlsxwriter==3.1.9
+
+# HTTP requests
+requests==2.32.4
+urllib3==2.5.0
+
+# Configuration
+python-decouple==3.8
+toml==0.10.2
+
+# Utilities
+typing_extensions==4.14.1
+packaging==25.0
+
+# Optional: For enhanced terminal features
+colorama==0.4.6
+click==8.2.1
